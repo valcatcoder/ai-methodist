@@ -12,3 +12,27 @@ if level == 'A1' or level =='A2' or level == 'B1' or level == 'B2' or level =='C
 else:      
         
         print ('Ошибка: Неверный формат уровня. Используйте A1 - C2')
+
+
+#Модуль 3: Анализатор сложности текста
+
+#подсчет слов в тексте + предобработка (без учета регистра и с учетом окончания текста)
+s = input ().lower () + ' ' #для пробела в конце текста
+total_words = s.count (' ') 
+print (total_words)
+
+#идентификация грамматических маркеров и complexity index на их основе
+
+count_ed = s.count('ed ')
+count_ing = s.count('ing ')
+print (count_ed)
+print (count_ing)
+
+total_markers =  (count_ed) + (count_ing)
+print (total_markers)
+
+if total_words > 1: 
+  complexity_index = ((total_markers) / (total_words) ) * 100
+  print ("Индекс сложности:", round(complexity_index, 2), "%")
+else: 
+  print ("Текст не введен")
