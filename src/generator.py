@@ -36,3 +36,25 @@ if total_words > 1:
   print ("Индекс сложности:", round(complexity_index, 2), "%")
 else: 
   print ("Текст не введен")
+
+#Модуль 4:
+
+#очистка текста от символов, знаков и чувствительности к регистру
+
+raw_text = input().lower ()
+punctuation_del = ("{}[].,!?:;()")
+clean_chars = []
+
+for char in (raw_text):
+    if char not in punctuation_del:
+        clean_chars.append (char)
+print (clean_chars) 
+
+clean_text ="".join (clean_chars)
+print (clean_text) 
+
+clean_text_list = clean_text.split()
+print (clean_text_list)
+
+
+
