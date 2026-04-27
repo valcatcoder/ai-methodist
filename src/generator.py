@@ -56,5 +56,19 @@ print (clean_text)
 clean_text_list = clean_text.split()
 print (clean_text_list)
 
+#лингвистическая фильтрация 
+
+filtered_text = []
+stop_words = ["a", "an", "the", "and", "but", "because"]
+for word in clean_text_list:
+     if word not in stop_words:
+         filtered_text.append (word)
+
+#создание коллокаций (word level)
+
+for i in range (len (filtered_text) - 1):
+    collocation = filtered_text [i] + " " + filtered_text [i+1]
+    print (collocation)
+
 
 
