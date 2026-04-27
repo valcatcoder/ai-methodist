@@ -70,5 +70,18 @@ for i in range (len (filtered_text) - 1):
     collocation = filtered_text [i] + " " + filtered_text [i+1]
     print (collocation)
 
+#лингвистическая фильтрация по частям речи 
+#spacy download is required
+
+filtered_text_joined = " ".join(filtered_text)
+doc = nlp(filtered_text_joined) 
+adj_noun = []
+
+for i in range (len(doc) - 1):
+  if doc[i].pos_ == "ADJ" and doc[i+1].pos_ == "NOUN":
+    phrase = doc[i].text + " " + doc[i+1].text
+    adj_noun.append(phrase)
+print (adj_noun)
+
 
 
